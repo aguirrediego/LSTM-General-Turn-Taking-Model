@@ -108,8 +108,7 @@ for experiment in experiments:
         # Reshape 'outputs' to be a 2D matrix, so we can perform outputs * weights
         outputs = tf.reshape(outputs, [-1, num_hidden])
 
-        # sigmoid_acts = tf.sigmoid(tf.add(tf.matmul(outputs, weights['out']), biases['out']))
-        sigmoid_acts = tf.pow(tf.add(tf.matmul(outputs, weights['out']), biases['out']),3)
+        sigmoid_acts = parametric_relu(tf.sigmoid(tf.add(tf.matmul(outputs, weights['out']), biases['out'])))
 
         # Reshape the result back to (timesteps, num_examples, num_output_units)
         sigmoid_acts = tf.reshape(sigmoid_acts, [timesteps, -1, num_output_units])
