@@ -17,8 +17,6 @@ timesteps = 1200  # 60 sec * 20 frames/sec = 1200
 num_hidden = 10  # num units in LSTM cell
 experiments = [5,10,20,40,60]
 
-#with tf.device('/gpu:1'):
-
 for experiment in experiments:
 
     tf.reset_default_graph()
@@ -45,17 +43,6 @@ for experiment in experiments:
         'out': tf.get_variable("b_out", shape=[num_output_units],
                initializer=tf.contrib.layers.xavier_initializer())
     }
-
-
-
-    def parametric_relu(_x):
-        alpha = tf.get_variable('alpha', _x.get_shape()[-1],
-                                 initializer=tf.constant_initializer(0.1),
-                                 dtype=_x.dtype)
-        pos = tf.nn.relu(_x)
-        neg = alpha * (_x - abs(_x)) * 0.5
-
-        return pos + neg
 
 
     def build_lstm_rnn(x, weights, biases):
@@ -135,5 +122,5 @@ for experiment in experiments:
 
         print("Optimization Finished!")
 
-        save_path = saver.save(sess, "./Toyota_sigmoid_model_10hidden_" + str(experiment) + ".ckpt")
+        save_path = saver.save(sess, "./Skantze_Replica_Model_" + str(experiment) + ".ckpt")
         print("Model saved in file: %s" % save_path)
