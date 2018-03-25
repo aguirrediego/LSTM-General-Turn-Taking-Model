@@ -164,5 +164,5 @@ for experiment in experiments:
 
         print("Optimization Finished!")
 
-        save_path = saver.save(sess, "./Toyota_denseX2_dropout075_no_prelu_model_30hidden_clip" + str(experiment) + "_cubic.ckpt")
+        save_path = saver.save(sess, "./Improved_Model_" + str(experiment) + ".ckpt")
         print("Model saved in file: %s" % save_path)
