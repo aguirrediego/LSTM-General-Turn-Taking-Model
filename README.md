@@ -11,7 +11,7 @@ and neurons, 3) trained without truncation, and 4) added
 dropout regularization.  Our improved model gives good and sometimes
 better results, up to 26% better.
 
-skantze_replica.py: Tensorflow code that builds and trains a general turn-taking model exactly as Skantze describes in his paper 'Towards aGeneral, Continuous Model of Turn-takingin Spoken Dialogue using LSTM Recurrent Neural Networks'
+skantze_replica.py: Tensorflow code that builds and trains a general turn-taking model exactly as described by Skantze in his paper 'Towards aGeneral, Continuous Model of Turn-takingin Spoken Dialogue using LSTM Recurrent Neural Networks' (http://www.sigdial.org/workshops/conference18/proceedings/pdf/SIGDIAL27.pdf)
 
 improved_model.py: Tensorflow code that builds and traing a general turn-taking model with the improves described above
 
