@@ -1,1 +1,1 @@
-# LSTM-Language-Model
+# General Turn Taking Model - LSTM RNN
